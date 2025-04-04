@@ -33,15 +33,15 @@
 #include "gfx.h" // htcw_gfx
 #include "uix.h" // htcw_uix
 // This is a Windows 3.1 .fon file, embedded in a header:
-#define VGA_8X8_IMPLEMENTATION
-#include "vga_8x8.h"
+#define VGA_9X16_IMPLEMENTATION
+#include "vga_9x16.h"
 
 // import the namespaces
 using namespace gfx;
 using namespace uix;
 
 // fonts load from streams, so wrap the font header array in a const stream
-const_buffer_stream fps_stream(vga_8x8,sizeof(vga_8x8));
+const_buffer_stream fps_stream(vga_9x16,sizeof(vga_9x16));
 // now declare the font using the fps_stream
 win_font fps_font(fps_stream);
 
