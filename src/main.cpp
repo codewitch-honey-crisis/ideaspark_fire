@@ -8,9 +8,9 @@
 // calls, again for increased performance
 #define USE_SPANS
 // make the flames blue
-//#define BLUE_FLAME
+// #define BLUE_FLAME
 // use a generated rather than static palette
-//#define USE_GEN_PALETTE
+// #define USE_GEN_PALETTE
 
 // screen dimensions
 #define LCD_WIDTH 320
@@ -141,14 +141,14 @@ static void gen_palette() {
         int N = pal_size - 1;
 
         // Red channel ramps up quickly to 31
-        unsigned char r = (unsigned char)(31 * i / N);
+        int r = (31 * i / N);
 
         // Green channel starts increasing later, reaching max at 3/4 of the way
-        unsigned char g = (i > N / 4) ? (unsigned char)(63 * (i - N / 4) / (3 * N / 4)) : 0;
+        int g = (i > N / 4) ? (63 * (i - N / 4) / (3 * N / 4)) : 0;
         if (g > 63) g = 63;
 
         // Blue appears in the last quarter of the range
-        unsigned char b = (i > 3 * N / 4) ? (unsigned char)(31 * (i - 3 * N / 4) / (N / 4)) : 0;
+        int b = (i > 3 * N / 4) ? (31 * (i - 3 * N / 4) / (N / 4)) : 0;
         if (b > 31) b = 31;
 
         fire_palette[i] = RGB(r, g, b);
