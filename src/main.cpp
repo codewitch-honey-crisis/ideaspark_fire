@@ -400,7 +400,7 @@ static void screen_init()
     fire.bounds(scr.bounds());
     // register it with the screen
     scr.register_control(fire);
-    // put the font text at the top of the screen
+    // put the font text at the top of the screen.
     fps.bounds(srect16(0,0,scr.bounds().x2,fps_font.line_height()-1));
     fps.font(fps_font);
     fps.color(uix_color_t::green);
